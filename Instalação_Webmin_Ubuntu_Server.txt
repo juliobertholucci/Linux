@@ -1,0 +1,64 @@
+Instalando o Webmin no Ubuntu Server Linux
+===========================================================================================================
+
+1- Acesse o Ubuntu como Administrador
+login   : root         <Enter>
+Password: 0     (zero) <Enter>
+
+2-Comando para atualizar os pacotes de programas do Linux:  
+  apt-get update -y  <Enter>
+
+3-Comando para atualizar os programas do Linux:  
+  apt-get upgrade -y  <Enter>
+
+4-Digite o comando abaixo sem pular de linha para adicionar o repositório do Webmin:
+  echo "deb https://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list  <Enter>
+
+5-Digite os comandos para adicionar a chave de criptografia do Webmin no Linux:
+  cd /root  <Enter>
+  wget http://www.webmin.com/jcameron-key.asc  <Enter>
+  apt-key add jcameron-key.asc  <Enter>
+
+6-Digite os comandos para instalar o pacote de navegação segura por https no Linux:
+
+  apt-get install apt-transport-https -y  <Enter>
+
+7-Novamente digite o comando para atualizar os pacotes de programas do Linux:
+
+  apt-get update -y  <Enter>
+
+8-Digite o comando para instalar o Webmin:
+
+  apt-get install webmin -y  <Enter>
+
+9-Desligue o Ubuntu Server:
+  
+  shutdown -h 0  <Enter>
+
+10-No VirtualBox, clique no menu Configurações, Rede e altere o item 
+   Conectado a: NAT para Placa em Modo Bridge, em seguida clique no botão OK.
+
+11-No VirtualBox clique no botão Iniciar, aguarde o Ubuntu Server carregar e entre novamente como Administrador (Passo 1)
+
+12-Digite o comando e anote o endereço IP que surgir:
+   
+   hostname -I  <Enter>
+
+13-Abra um Navegador (Chrome/Firefox/Edge/IE) na máquina real e digite:
+
+   https://endereço IP da máquina virtual:10000/session_login.cgi
+
+   Exemplo: https://192.168.0.113:10000/session_login.cgi
+
+   Se apareçer uma tela de Aviso, clique no botão Avançado e Continuar, não se preocupe não vai infectar seu computador.
+
+14-Será exibida uma tela de Login, digite no Username: root e na Password: 0 (Zero).
+
+
+Bom trabalho, agora o Webmin vai te ajudar a configurar e instalar programas de servidor no Linux de forma mais simples!
+
+
+
+
+
+
